@@ -44,10 +44,9 @@ wc2026-data-project/
 └── sql/
     ├── 01_setup.sql
     ├── 02_raw_tables.sql
-    ├── 03_load_data.sql
+    ├── 03_checks.sql
     ├── 04_staging_views.sql
-    ├── 05_marts_views.sql
-    └── 06_checks.sql
+    └── 05_marts_views.sql
 ```
 
 ## Tools

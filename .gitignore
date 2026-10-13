@@ -1,0 +1,22 @@
+# Secrets: never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Snowflake connection files (may hold account details or passwords)
+config.toml
+connections.toml
+
+# Data exports (keep the repo to code and docs)
+*.csv
+data/
+
+# Computer and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log

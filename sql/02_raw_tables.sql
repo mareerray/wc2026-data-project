@@ -18,22 +18,10 @@ create or replace table teams (
     crest_url   varchar                        -- link to the team's crest image
 );
 
--- Check: should say RAW
-select current_schema();
-
--- After loading: should be 48
-select count(*) as team_count from wc2026.raw.teams;
-
--- Any team id that appears more than once? (expect no rows)
-select id, count(*) 
-from wc2026.raw.teams
-group by id
-having count(*) > 1;
-
 -- matches: one row per match
 create or replace table matches (
     id                 integer not null primary key,  -- match id from football-data.org
-    utc_date           timestamp_tz not null,         -- kick-off time
+    utc_date           varchar not null,         -- kick-off time
     status             varchar not null,              -- e.g. SCHEDULED, FINISHED
     stage              varchar,                       -- e.g. GROUP_STAGE, LAST_16
     group_name         varchar,
@@ -48,7 +36,7 @@ create or replace table matches (
     away_goals_regular integer,
     home_pens          integer,                       -- shootout kicks only
     away_pens          integer,
-    last_updated       timestamp_tz
+    last_updated       varchar
 );
 
 -- scorers: one row per player
