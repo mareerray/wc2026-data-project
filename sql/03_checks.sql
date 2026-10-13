@@ -5,17 +5,20 @@ use warehouse wc_wh;
 use database wc2026;
 use schema raw;
 
--- 1. Which tables exist?
+-- Show schemas
+show schemas in database wc2026;
+
+-- Which tables exist?
 show tables in schema wc2026.raw;
 
 -- TEAMS: ----------------------------------------
--- 2. Row counts after loading: should be 48 records
+-- Row counts after loading: should be 48 records
 select count(*) as team_count from wc2026.raw.teams;     -- expect 48
 
--- 3. Sample rows
+-- Sample rows
 select * from wc2026.raw.teams limit 5;    -- first row should be Uruguay (758)
 
--- 4. Check for duplicates: any team ID that appears more than once? (expect no rows)
+-- Check for duplicates: any team ID that appears more than once? (expect no rows)
 select id, count(*) 
 from wc2026.raw.teams
 group by id
