@@ -9,6 +9,7 @@ A small data engineering and analytics practice project, built by reusing the ma
 I'm learning data engineering and analytics engineering. I wanted to practice data modeling, SQL and analytics on real data, so I reused the data from my own app instead of a sample dataset.
 
 ## Data flow
+![Data flow](docs/data-flow.png)
 ```
 football-data.org API → Supabase (Postgres) → CSV export → Snowflake → SQL views
 ```
